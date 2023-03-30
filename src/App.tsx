@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './app.scss'
+import ListItems from './components/ListItems';
+
+interface ItemsJson {
+  id: number,
+  url: string,
+  name: string,
+  type_size: string,
+  size: string,
+  barcode: number,
+  manufacturer: string,
+  brand: string,
+  description: string,
+  price: number
+}
 
 function App() {
+
+  const items = JSON
+
+  console.log(items)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
 
 export default App;
+
+
