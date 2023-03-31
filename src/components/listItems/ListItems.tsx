@@ -1,6 +1,6 @@
 import React from 'react'
-import JSON from '../data/items.json'
-import '../app.scss'
+import JSON from '../../data/items.json'
+import './listitems.scss'
 
 const ListItems = () => {
     const items = JSON

@@ -1,6 +1,9 @@
 import React from 'react';
 import './app.scss'
-import ListItems from './components/ListItems';
+//import './burger.scss'
+import Footer from './components/footer/Footer';
+import ListItems from './components/listItems/ListItems';
+import NavBar from './components/navbar/NavBar';
 
 interface ItemsJson {
   id: number,
@@ -18,11 +21,19 @@ interface ItemsJson {
 function App() {
 
   const items = JSON
+  const body = document.body
 
-  console.log(items)
+  const burger__wrapper = document.querySelector('.burger__wrapper');
+  burger__wrapper?.addEventListener('click', function () {
+    burger__wrapper?.classList.toggle('active')
+    document.querySelector('.navbar-top')?.classList.toggle('open')
+  })
 
+  
   return (
     <div className="App">
+      <NavBar />
+      <Footer />
     </div>
   );
 }
