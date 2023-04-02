@@ -1,6 +1,14 @@
+/*.navigation{
+    margin-bottom: 110px;
+}*/
+
 .navbar-top{
     height: 60px;
     border-bottom: 1px solid rgba( #3F4E65, 0.2);
+}
+
+body.lock{
+    overflow: hidden;
 }
 
 .navbar-top__callcenter--mobile,
