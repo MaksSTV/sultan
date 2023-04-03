@@ -48,13 +48,15 @@ const Catalog = () => {
 
     useEffect(() => {
         setItems(sortedItems())
-    }, [currPage])
+    }, [currPage, selectedSort])
 
     const pages = getAmountPage(jsonData, 8)
 
 
     function sortedItems():ItemsJson[] {
-        let sorted: ItemsJson[] = items;
+        const sorted: ItemsJson[] = jsonData;
+        filterBySelectSort(sorted)
+        console.log(sorted)
         return sorted.filter((value, index) => (index+1 > (currPage-1)*8)&&(index+1 <= currPage*8))
     }
 
@@ -63,23 +65,35 @@ const Catalog = () => {
         setCurrPage(page)
         //window.scrollTo(0, 200);
     }
-
+    //console.log(selectedSort)
     function selectSort(event: ChangeEvent<HTMLSelectElement>){
         setSelectedSort(event.target.value)
-        if(event.target.value === 'default'){
-            setItems([...json])
+    }
+
+    function filterBySelectSort(data: ItemsJson[]): ItemsJson[]{
+        if(selectedSort === 'nameASC'){
+            console.log('ASC')
+            const sort = data.sort((a,b) => a.name.localeCompare(b.name))
+            console.log(sort)
+            return sort
         }
-        if(event.target.value === 'nameASC'){
-            setItems([...json].sort((a,b) => a.name.localeCompare(b.name)))
+        else if(selectedSort === 'nameDESC'){
+            console.log('DESC')
+            const sort = data.sort((a,b) => a.name.localeCompare(b.name)).reverse()
+            console.log(sort)
+            return sort
         }
-        if(event.target.value === 'nameDESC'){
-            setItems([...json].sort((a,b) => a.name.localeCompare(b.name)).reverse())
+        else if(selectedSort === 'priceASC'){
+            return data.sort((a,b) => a.price - b.price)
         }
-        if(event.target.value === 'priceASC'){
-            setItems([...json].sort())
+        else if(selectedSort === 'priceDESC'){
+            return data.sort((a,b) => a.price - b.price).reverse()
         }
-        if(event.target.value === 'priceDESC'){
-            setItems([...json].sort())
+        else{
+            console.log('default')
+            const sort = data.sort((a,b) => a.id - b.id)
+            console.log(data)
+            return sort
         }
         
     }
