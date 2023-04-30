@@ -1,6 +1,5 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { mobileFilters } from '../../utils/mobile-filters'
-import ListItems from '../listItems/ListItems'
 import json from '../../data/items.json'
 import './catalog.scss'
 import '../listItems/listitems.scss'
@@ -49,6 +48,7 @@ const Catalog = () => {
     /*useEffect(() => {
         pages = getAmountPage(jsonData, 8)
     }, [])*/
+
 
     useEffect(() => {
         setItems(sortedItems())
@@ -251,7 +251,7 @@ const Catalog = () => {
                     </div>
 
                     <div className="items__catalog">
-                        {items.length == 0 ?
+                        {items.length === 0 ?
                             <div>Ничего не найдено</div>
                             : <div>
                                 <div className="items">
