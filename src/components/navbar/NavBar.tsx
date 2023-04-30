@@ -6,7 +6,6 @@ import './navbar.scss'
 const NavBar = () => {
 
     mobileMenu()
-
     return (
         <div className="navigation">
             <div className="navbar-top">
