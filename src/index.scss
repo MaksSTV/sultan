@@ -30,6 +30,11 @@ body,
     height: 100%;
 }
 
+#root{
+    display: flex;
+    flex-direction: column;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */

@@ -5,6 +5,9 @@ import Catalog from './components/catalog/Catalog';
 import Footer from './components/footer/Footer';
 import ListItems from './components/listItems/ListItems';
 import NavBar from './components/navbar/NavBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Catalogs from './pages/Catalogs';
+import Card from './pages/Card/Card';
 
 /*interface ItemsJson {
   id: number,
@@ -22,11 +25,14 @@ import NavBar from './components/navbar/NavBar';
 function App() {
   
   return (
-    <div className="App">
-      <NavBar />
-      <Catalog />
-      <Footer />
-    </div>
+    <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Catalogs />} />
+          <Route path='/card/:barcode' element={<Card />} />
+        </Routes>
+        <Footer />
+    </BrowserRouter>
   );
 }
 

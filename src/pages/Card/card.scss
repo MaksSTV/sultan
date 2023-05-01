@@ -1,0 +1,98 @@
+.card{
+    flex-grow: 1;
+}
+
+.card__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 65px;
+    padding: 35px 20px;
+    height: 900px;
+}
+
+.card__image-wrapper{
+    width: 50%;
+    text-align: center;
+}
+
+.card__image{
+    max-height: 500px;
+}
+
+.card__content-text{
+    width: 50%;
+}
+
+.card__isAvailable{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #1FD85D;
+    margin-bottom: 10px;
+}
+
+.card__title{
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 150%;
+    color: #111111;
+    max-width: 630px;
+    margin-bottom: 10px;
+}
+
+.card__size{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    color: #3F4E65;
+    margin-bottom: 15px;
+}
+
+.card__grid-price-btns{
+    margin-bottom: 35px;
+}
+
+.card__grid-price{
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 130%;
+    color: #111111;
+}
+
+.card__miniDesc{
+    margin-bottom: 25px;
+}
+
+.miniDesc__item{
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    color: #3F4E65;
+    b{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        color: #111111;
+    }
+}
+
+.card__description-slider,
+.card__specifications-slider{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #111111;
+}
+
+.card__description-slider,
+.card__dashed-line{
+    margin-bottom: 20px;
+}
+
+.card__dashed-line{
+    opacity: 0.3;
+    border: 1px dashed #3F4E65;
+    width: 270px;
+}
